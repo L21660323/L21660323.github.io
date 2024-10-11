@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicación de Notas</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #a8c0ff, #3f2b96); /* Gradient background */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow for depth */
+            width: 320px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .note-input {
+            width: calc(100% - 22px); /* Adjust for padding and border */
+            padding: 12px; /* Increased padding */
+            margin-bottom: 10px;
+            border: 2px solid #007bff; /* Stronger border */
+            border-radius: 8px; /* More rounded corners */
+            transition: border-color 0.3s, box-shadow 0.3s;
+            font-size: 1em; /* Increased font size */
+        }
+        .note-input:focus {
+            border-color: #0056b3; /* Darker border on focus */
+            box-shadow: 0 0 5px rgba(0, 91, 255, 0.5); /* Subtle shadow on focus */
+            outline: none;
+        }
+        .add-note {
+            width: 100%;
+            padding: 12px; /* Increased padding */
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 8px; /* More rounded corners */
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s, box-shadow 0.3s; /* Added box-shadow transition */
+            font-size: 1em; /* Increased font size */
+        }
+        .add-note:hover {
+            background: #218838;
+            transform: translateY(-2px); /* Elevate button on hover */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+        }
+        .notes {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+        .note {
+            background: #f8f9fa;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 8px; /* More rounded corners */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s, transform 0.2s; /* Transition for note hover */
+        }
+        .note:hover {
+            background: #e2e6ea; /* Change background on hover */
+            transform: scale(1.02); /* Slightly scale up */
+        }
+        .delete-note {
+            background: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 8px; /* More rounded corners */
+            cursor: pointer;
+            padding: 5px 10px;
+            transition: background 0.3s;
+            font-size: 0.9em; /* Slightly smaller font size */
+        }
+        .delete-note:hover {
+            background: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Notas</h1>
+        <input type="text" id="noteInput" class="note-input" placeholder="Escribe una nota...">
+        <button id="addNote" class="add-note">Agregar Nota</button>
+        <ul id="notes" class="notes"></ul>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', loadNotes);
+        document.getElementById('addNote').addEventListener('click', addNote);
+
+        function loadNotes() {
+            const notes = JSON.parse(localStorage.getItem('notes')) || [];
+            const notesList = document.getElementById('notes');
+            notesList.innerHTML = '';
+            notes.forEach((note, index) => {
+                const li = document.createElement('li');
+                li.className = 'note';
+                li.innerHTML = `
+                    ${note}
+                    <button class="delete-note" onclick="deleteNote(${index})">Eliminar</button>
+                `;
+                notesList.appendChild(li);
+            });
+        }
+
+        function addNote() {
+            const noteInput = document.getElementById('noteInput');
+            const noteText = noteInput.value.trim();
+            if (noteText === '') return;
+            const notes = JSON.parse(localStorage.getItem('notes')) || [];
+            notes.push(noteText);
+            localStorage.setItem('notes', JSON.stringify(notes));
+            noteInput.value = '';
+            loadNotes();
+        }
+
+        function deleteNote(index) {
+            const notes = JSON.parse(localStorage.getItem('notes')) || [];
+            notes.splice(index, 1);
+            localStorage.setItem('notes', JSON.stringify(notes));
+            loadNotes();
+        }
+    </script>
+</body>
+</html>

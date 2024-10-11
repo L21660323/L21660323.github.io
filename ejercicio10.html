@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtrar Tabla en Tiempo Real</title>
+    <style>
+        table {
+            width: 50%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        input {
+            margin: 20px;
+            padding: 10px;
+            width: 50%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 style="text-align:center;">Filtrar Tabla</h1>
+
+    <!-- Input para filtrar la tabla -->
+    <input type="text" id="filtroInput" onkeyup="filtrarTabla()" placeholder="Buscar en la tabla...">
+
+    <!-- Tabla con datos -->
+    <table id="tablaDatos">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>País</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Juan Pérez</td>
+                <td>25</td>
+                <td>México</td>
+            </tr>
+            <tr>
+                <td>María Gómez</td>
+                <td>30</td>
+                <td>España</td>
+            </tr>
+            <tr>
+                <td>Pedro Sánchez</td>
+                <td>22</td>
+                <td>Argentina</td>
+            </tr>
+            <tr>
+                <td>Lucía Martínez</td>
+                <td>28</td>
+                <td>Colombia</td>
+            </tr>
+            <tr>
+                <td>Antonio López</td>
+                <td>35</td>
+                <td>Chile</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Enlazamos el archivo JavaScript -->
+    <script src="ejercicio10.js"></script>
+
+</body>
+</html>

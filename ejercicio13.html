@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertidor de Unidades</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e7f3fe;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .converter {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 300px;
+        }
+        .converter input, .converter select {
+            margin: 10px 0;
+            padding: 12px;
+            width: calc(100% - 24px);
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .converter h1 {
+            margin-bottom: 20px;
+            color: #2a2a2a;
+        }
+        .converter h2 {
+            margin-top: 20px;
+            color: #4CAF50; /* Color verde para el resultado */
+        }
+        .converter button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+        .converter button:hover {
+            background-color: #0056b3; /* Color más oscuro al pasar el mouse */
+        }
+    </style>
+</head>
+<body>
+    <div class="converter">
+        <h1>Convertidor de Unidades</h1>
+        <input type="number" id="inputValue" placeholder="Ingrese el valor">
+        <select id="inputUnit">
+            <option value="meters">Metros</option>
+            <option value="kilometers">Kilómetros</option>
+            <option value="miles">Millas</option>
+        </select>
+        <select id="outputUnit">
+            <option value="meters">Metros</option>
+            <option value="kilometers">Kilómetros</option>
+            <option value="miles">Millas</option>
+        </select>
+        <h2 id="outputValue">Resultado: </h2>
+    </div>
+
+    <script>
+        const inputValue = document.getElementById('inputValue');
+        const inputUnit = document.getElementById('inputUnit');
+        const outputUnit = document.getElementById('outputUnit');
+        const outputValue = document.getElementById('outputValue');
+
+        inputValue.addEventListener('input', convert);
+        inputUnit.addEventListener('change', convert);
+        outputUnit.addEventListener('change', convert);
+
+        function convert() {
+            const value = parseFloat(inputValue.value);
+            if (isNaN(value)) {
+                outputValue.textContent = 'Resultado: ';
+                return;
+            }
+
+            const input = inputUnit.value;
+            const output = outputUnit.value;
+
+            let meters;
+
+            switch (input) {
+                case 'meters':
+                    meters = value;
+                    break;
+                case 'kilometers':
+                    meters = value * 1000;
+                    break;
+                case 'miles':
+                    meters = value * 1609.34;
+                    break;
+            }
+
+            let result;
+
+            switch (output) {
+                case 'meters':
+                    result = meters;
+                    break;
+                case 'kilometers':
+                    result = meters / 1000;
+                    break;
+                case 'miles':
+                    result = meters / 1609.34;
+                    break;
+            }
+
+            outputValue.textContent = `Resultado: ${result.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
