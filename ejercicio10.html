@@ -5,32 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Filtrar Tabla en Tiempo Real</title>
     <style>
-        table {
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #a8c0ff, #3f2b96); /* Fondo en degradado */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #333;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        input {
+            padding: 12px 15px; /* Mayor padding para el input */
             width: 50%;
+            border: 2px solid #007bff; /* Borde azul más fuerte */
+            border-radius: 8px; /* Esquinas redondeadas */
+            outline: none; /* Sin contorno por defecto */
+            transition: border-color 0.3s, box-shadow 0.3s; /* Efecto de transición */
+            margin-bottom: 20px;
+        }
+        input:focus {
+            border-color: #0056b3; /* Color del borde al enfocar */
+            box-shadow: 0 0 5px rgba(0, 91, 255, 0.5); /* Sombra sutil al enfocar */
+        }
+        table {
+            width: 60%;
             margin: 20px auto;
             border-collapse: collapse;
+            border-radius: 8px; /* Esquinas redondeadas para la tabla */
+            overflow: hidden; /* Para aplicar redondeo a las esquinas de la tabla */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra para la tabla */
         }
         th, td {
-            border: 1px solid #ccc;
-            padding: 10px;
+            border: 1px solid #ccc; /* Borde suave */
+            padding: 12px; /* Mayor padding */
             text-align: left;
+            transition: background-color 0.3s; /* Transición suave para el fondo */
         }
         th {
             background-color: #f4f4f4;
+            color: #333;
         }
-        input {
-            margin: 20px;
-            padding: 10px;
-            width: 50%;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
+        tbody tr:hover {
+            background-color: #e2e6ea; /* Color al pasar el mouse */
         }
     </style>
 </head>
 <body>
 
-    <h1 style="text-align:center;">Filtrar Tabla</h1>
+    <h1>Filtrar Tabla</h1>
 
     <!-- Input para filtrar la tabla -->
     <input type="text" id="filtroInput" onkeyup="filtrarTabla()" placeholder="Buscar en la tabla...">
