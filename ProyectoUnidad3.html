@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> <!--link es una etiqueta que vincula un archivo externo a la página html, en este caso, un archivo de iconos-->
+    <link rel="stylesheet" href="ProyectoUnidad3.css"> <!--link es una etiqueta que vincula un archivo externo a la página html, en este caso, un archivo de estilo css-->
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="wrapper"> <!--wrapper es un contenedor-->
+        <nav class="nav"> <!--nav es una etiqueta que define una sección de navegación-->
+            <div class="nav-logo">  <!--nav-logo es un contenedor-->
+                <img src="logo.jpg" alt="Programacion web">Programación Web <!--img es una etiqueta que define una imagen, src: define la URL de la imagen, alt: define un texto alternativo para la imagen-->
+            </div>
+            <div class="nav-menu" id="navMenu"> <!--nav-menu es un contenedor-->
+                <ul>
+                    <li><a href="#content" class="link active">Inicio</a></li> <!--li es una etiqueta que define un elemento de lista, a es una etiqueta que define un hipervínculo, href: define la URL de la página a la que se va a enlazar, class: define una clase para el hipervínculo-->
+                    <li><a href="#" class="link" onclick="loadContent('servicios.html')">Servicios</a></li> <!--li es una etiqueta que define un elemento de lista, a es una etiqueta que define un hipervínculo, href: define la URL de la página a la que se va a enlazar, class: define una clase para el hipervínculo, onclick: define un script que se ejecuta cuando se hace clic en el hipervínculo-->
+                    <li><a href="#" class="link" onclick="loadContent('sobre-mi.html')">Sobre mí</a></li>   <!--li es una etiqueta que define un elemento de lista, a es una etiqueta que define un hipervínculo, href: define la URL de la página a la que se va a enlazar, class: define una clase para el hipervínculo, onclick: define un script que se ejecuta cuando se hace clic en el hipervínculo-->
+                    <li><a href="#" class="link" onclick="loadContent('contacto.html')">Contacto</a></li>  <!--li es una etiqueta que define un elemento de lista, a es una etiqueta que define un hipervínculo, href: define la URL de la página a la que se va a enlazar, class: define una clase para el hipervínculo, onclick: define un script que se ejecuta cuando se hace clic en el hipervínculo-->
+                </ul>
+            </div>
+            <div class="nav-button">  <!--nav-button es un contenedor-->
+                <button class="btn white-btn" id="loginBtn" onclick="document.location='index.html'">Iniciar sesión</button>    <!--button: define un botón, class: define una clase para el botón, id: define un identificador para el botón, onclick: define un script que se ejecuta cuando se hace clic en el botón-->
+                <button class="btn" id="registerBtn" onclick="document.location='ejercicio3.html'">Registrarse</button> <!--button: define un botón, class: define una clase para el botón, id: define un identificador para el botón, onclick: define un script que se ejecuta cuando se hace clic en el botón-->
+            </div>
+            <div class="nav-menu-btn">
+                <i class="bx bx-menu" onclick="myMenuFunction()"></i> <!--i es una etiqueta que define un icono, class: define una clase para el icono, onclick: define un script que se ejecuta cuando se hace clic en el icono-->
+            </div>
+        </nav>
+        <main id="content"> <!--main es una etiqueta que define el contenido principal de la página-->
+            <!-- Sección de Galería -->
+            <section id="galeria" class="section"> <!--section es una etiqueta que define una sección de la página-->
+                <h1>Galería de actividades</h1> <!--h1 es un encabezado-->
+                <div class="gallery">
+                    <div class="gallery-item" data-modal-target="#modal1"> <!--gallery-item es un contenedor, data-modal-target: define el identificador del modal al que se va a dirigir-->
+                        <img src="image1.jpg" alt=""> <!--img es una etiqueta que define una imagen, src: define la URL de la imagen, alt: define un texto alternativo para la imagen-->
+                        <p>Mostrar un mensaje en JavaScript</p> <!--p es un párrafo-->
+                    </div>
+                    <div class="gallery-item" data-modal-target="#modal2">
+                        <img src="image2.jpg" alt="">
+                        <p>Cambio de color con un botón</p>
+                    </div>
+                    <div class="gallery-item" data-modal-target="#modal3">
+                        <img src="image3.jpg" alt="">
+                        <p>Formulario de registro</p>
+                    </div>
+                    <div class="gallery-item" data-modal-target="#modal4">
+                        <img src="image4.jpg" alt="">
+                        <p>Suma de dos números</p>
+                    </div>
+                    <div class="gallery-item" data-modal-target="#modal5">
+                        <img src="image5.jpg" alt="">
+                        <p>Contador</p>
+                    </div> 
+                    <div class="gallery-item" data-modal-target="#modal6">
+                        <img src="image6.jpg" alt="">
+                        <p>Cambiar imágen con un boton</p>
+                    </div> 
+                    <div class="gallery-item" data-modal-target="#modal7">
+                        <img src="image7.jpg" alt="">
+                        <p>Temporizador de cueta hacia atras</p>
+                    </div> 
+                    <div class="gallery-item" data-modal-target="#modal8">
+                        <img src="image8.jpg" alt="">
+                        <p>Lista de tareas</p>
+                    </div> 
+                    <div class="gallery-item" data-modal-target="#modal9">
+                        <img src="image9.jpg" alt="">
+                        <p>Juego de piedra, papel o tijeras</p>
+                    </div> 
+                    <div class="gallery-item" data-modal-target="#modal10">
+                        <img src="image10.jpg" alt="">
+                        <p>Filtrar búsqueda en una tabla</p>
+                    </div> 
+                    <div class="gallery-item" data-modal-target="#modal11">
+                        <img src="image11.jpg" alt="">
+                        <p>Galería de imágenes</p>
+                    </div> 
+                    <div class="gallery-item" data-modal-target="#modal12">
+                        <img src="image12.jpg" alt="">
+                        <p>Calcúladora básica</p>
+                    </div> 
+                    <div class="gallery-item" data-modal-target="#modal13">
+                        <img src="image13.jpg" alt="">
+                        <p>Convertidor de metros, kilometros y millas</p>
+                    </div> 
+                    <div class="gallery-item" data-modal-target="#modal14">
+                        <img src="image14.jpg" alt="">
+                        <p>Contador de palabaras y caracteres</p>
+                    </div> 
+                    <div class="gallery-item" data-modal-target="#modal15">
+                        <img src="image15.jpg" alt="">
+                        <p>Cronómetro que puasa y reinicia el tiempo</p>
+                    </div> 
+                    <div class="gallery-item" data-modal-target="#modal16">
+                        <img src="image16.jpg" alt="">
+                        <p>Galería de imágenes usan una API</p>
+                    </div> 
+                    <div class="gallery-item" data-modal-target="#modal17">
+                        <img src="image17.jpg" alt="">
+                        <p>Guardado de notas en el local storage</p>
+                    </div> 
+                </div>
+            </section>
+            <!-- Modales -->
+            <div class="modal" id="modal1">  <!--modal es un contenedor-->
+                <div class="modal-content">  <!--modal-content es un contenedor-->
+                    <span class="close-button">&times;</span> <!--span es una etiqueta que define una sección en un documento html, class: define una clase para el icono, &times;: define un icono de cierre-->
+                    <iframe src="ejercicio1.html" frameborder="0" title="Descripción del Proyecto 1"></iframe> <!--iframe es una etiqueta que define un contenedor para una página web externa, src: define la URL de la página web, frameborder: define si se debe mostrar un borde alrededor del iframe, title: define el título de la página web-->
+                </div>
+            </div>
+
+            <div class="modal" id="modal2">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <iframe src="ejercicio2.html" frameborder="0" title="Descripción del Proyecto 2"></iframe>
+                </div>
+            </div>
+
+            <div class="modal" id="modal3">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <iframe src="ejercicio3.html" frameborder="0" title="Descripción del Proyecto 3"></iframe>
+                </div>
+            </div>
+
+            <div class="modal" id="modal4">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <iframe src="ejercicio4.html" frameborder="0" title="Descripción del Proyecto 4"></iframe>
+                </div>
+            </div>
+
+            <div class="modal" id="modal5">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <iframe src="ejercicio5.html" frameborder="0" title="Descripción del Proyecto 5"></iframe>
+                </div>
+            </div>
+
+            <div class="modal" id="modal6">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <iframe src="ejercicio6.html" frameborder="0" title="Descripción del Proyecto 6"></iframe>
+                </div>
+            </div>
+        
+            <div class="modal" id="modal7">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <iframe src="ejercicio7.html" frameborder="0" title="Descripción del Proyecto 7"></iframe>
+                </div>
+            </div>
+
+            <div class="modal" id="modal8">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <iframe src="ejercicio8.html" frameborder="0" title="Descripción del Proyecto 8"></iframe>
+                </div>
+            </div>
+
+            <div class="modal" id="modal9">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <iframe src="ejercicio9.html" frameborder="0" title="Descripción del Proyecto 9"></iframe>
+                </div>
+            </div>
+
+            <div class="modal" id="modal10">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <iframe src="ejercicio10.html" frameborder="0" title="Descripción del Proyecto 10"></iframe>
+                </div>
+            </div>
+
+            <div class="modal" id="modal11">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <iframe src="ejercicio11.html" frameborder="0" title="Descripción del Proyecto 11"></iframe>
+                </div>
+            </div>
+
+            <div class="modal" id="modal12">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <iframe src="ejercicio12.html" frameborder="0" title="Descripción del Proyecto 12"></iframe>
+                </div>
+            </div>
+
+            <div class="modal" id="modal13">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <iframe src="ejercicio13.html" frameborder="0" title="Descripción del Proyecto 13"></iframe>
+                </div>
+            </div>
+
+            <div class="modal" id="modal14">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <iframe src="ejercicio14.html" frameborder="0" title="Descripción del Proyecto 14"></iframe>
+                </div>
+            </div>
+
+            <div class="modal" id="modal15">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <iframe src="ejercicio15.html" frameborder="0" title="Descripción del Proyecto 15"></iframe>
+                </div>
+            </div>
+
+            <div class="modal" id="modal16">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <iframe src="ejercicio16.html" frameborder="0" title="Descripción del Proyecto 16"></iframe>
+                </div>
+            </div>
+
+            <div class="modal" id="modal17">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <iframe src="ejercicio17.html" frameborder="0" title="Descripción del Proyecto 17"></iframe>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script>
+        function myMenuFunction() { /**Función para mostrar el menú de navegación en dispositivos móviles */
+        var i = document.getElementById("navMenu"); /**Obtiene el menú de navegación */
+
+        if(i.className === "nav-menu") {  /**Si el menú de navegación tiene la clase "nav-menu" */
+            i.className += " responsive"; /**Agrega la */
+        } else { /**De lo contrario */
+            i.className = "nav-menu"; /**Asigna la clase "nav-menu" */
+        }
+        }   
+    </script>
+    <script src="ProyectoUnidad3.js"></script> <!--script es una etiqueta que define un script de cliente, src: define la URL del archivo de script-->
+
+</body>
+</html>

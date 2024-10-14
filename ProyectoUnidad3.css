@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+/* Importa la fuente Poppins desde Google Fonts. */
+
+*{
+    margin: 0; /* con margin: 0 y padding: 0: se eliminan los márgenes y rellenos por defecto que tienen los elementos html. */
+    padding: 0;  /* con padding: 0 y padding: 0: se eliminan los márgenes y rellenos por defecto que tienen los elementos html. */
+    font-family: 'Poppins', sans-serif; /* con font-family: 'Poppins', sans-serif; se establece la fuente por defecto de la página. */
+}
+
+body{ /* con body se establecen los estilos del cuerpo de la página. */
+    background-color: #0d0d0d; /* con background-color: #0d0d0d; se establece el color de fondo del cuerpo de la página. */
+    color: black; /* con color: black; se establece el color del texto de la página. */
+}
+.wrapper{ /* con .wrapper se establecen los estilos del contenedor principal. */
+    display: flex;  /* con display: flex; se convierte el cuerpo de la página en un contenedor flexible. */
+    justify-content: center; /* con justify-content: center; se centra el contenido horizontalmente. */
+    align-items: center; /* con align-items: center; se centra el contenido verticalmente. */
+    min-height: 20vh; /* con min-height: 20vh; se establece la altura mínima del cuerpo de la página al 20% de la altura de la ventana gráfica. */
+    padding-top: 10px; /* Ajusta este valor si es necesario */
+    padding-bottom: 80px; /* Ajusta este valor si es necesario */
+}
+.nav{ /* con .nav se establecen los estilos de la barra de navegación. */
+    position: fixed; /* con position: fixed; se fija la barra de navegación en la parte superior de la ventana gráfica. */
+    top: 0; /* con top: 0; se establece la posición de la barra de navegación en la parte superior de la ventana gráfica. */
+    display: flex; /* con display: flex; se convierte la barra de navegación en un contenedor flexible. */
+    justify-content: space-around; /* con justify-content: space-around; se distribuyen los elementos de la barra de navegación de manera uniforme. */
+    width: 100%; /* con width: 100%; se establece el ancho de la barra de navegación al 100% de la ventana gráfica. */
+    height: 100px; /* con height: 100px; se establece la altura de la barra de navegación en 100px. */
+    line-height: 100px; /* con line-height: 100px; se establece la altura de línea de la barra de navegación en 100px. */
+    background: #00ffff; /* con background: #00ffff; se establece el color de fondo de la barra de navegación. */
+    z-index: 100; /* con z-index: 100; se establece la posición de la barra de navegación en la parte superior de la pila de elementos. */
+    box-shadow: 0 0 5px rgba(0, 255, 255, 0.2),   /* con box-shadow: 0 0 25px rgba(0, 255, 255, 0.2), se establece una sombra en el contenedor. */
+                0 0 20px rgba(0, 255, 255, 0.2),
+                0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+.nav-logo img{ /* con .nav-logo img se establecen los estilos de la imagen del logotipo de la barra de navegación. */
+    margin-right: 10px;  /* Ajusta este valor si es necesario */
+    margin-top: 25px; /* Ajusta este valor si es necesario */
+    height: auto;  /* con height: auto; se establece la altura de la imagen del logotipo de la barra de navegación de forma automática. */
+    height: 50px; /* con height: 50px; se establece la altura de la imagen del logotipo en 50px. */
+    width: 50px; /* con width: 50px; se establece el ancho de la imagen del logotipo en 50px. */
+    justify-items: left; /* con justify-items: left; se alinea la imagen del logotipo a la izquierda. */
+    border-radius: 30px; /* con border-radius: 30px; se establece el radio de las esquinas de la imagen del logotipo. */
+}
+.nav-menu ul{ /* con .nav-menu ul se establecen los estilos de la lista de elementos de la barra de navegación. */
+    display: flex; /* con display: flex; se convierte la lista de elementos en un contenedor flexible. */
+}
+.nav-menu ul li{     /* con .nav-menu ul li se establecen los estilos de los elementos de la lista de la barra de navegación. */
+    list-style-type: none; /* con list-style-type: none; se eliminan los marcadores de la lista de elementos. */
+}
+.nav-menu ul li .link{ /* con .nav-menu ul li .link se establecen los estilos de los enlaces de los elementos de la lista de la barra de navegación. */
+    text-decoration: none; /* con text-decoration: none; se elimina la decoración de los enlaces. */
+    font-weight: 500; /* con font-weight: 500; se establece el grosor de la fuente de los enlaces. */
+    color: black; /* con color: black; se establece el color del texto de los enlaces. */
+    padding-bottom: 15px; /* con padding-bottom: 15px; se establece el relleno inferior de los enlaces. */
+    margin: 0 25px; /* con margin: 0 25px; se establece el margen de los enlaces. */
+}
+.link:hover, .active{ /* con .link:hover, .active se establecen los estilos de los enlaces cuando se pasa el cursor sobre ellos o están activos. */
+    border-bottom: 2px solid black; /* con border-bottom: 2px solid black; se establece un borde inferior de 2px sólido en los enlaces. */
+}
+.nav-button .btn{ /* con .nav-button .btn se establecen los estilos de los botones de la barra de navegación. */
+    width: 130px; /* con width: 130px; se establece el ancho de los botones en 130px. */
+    height: 40px;    /* con height: 40px; se establece la altura de los botones en 40px. */
+    font-weight: 500; /* con font-weight: 500; se establece el grosor de la fuente de los botones. */
+    background: rgba(132, 132, 132, 0.4); /* con background: rgba(132, 132, 132, 0.4); se establece el color de fondo de los botones. */
+    border: none; /* con border: none; se elimina el borde de los botones. */
+    border-radius: 30px; /* con border-radius: 30px; se establece el radio de las esquinas de los botones. */
+    cursor: pointer; /* con cursor: pointer; se cambia el cursor al pasar sobre los botones. */
+    transition: .3s ease; /* con transition: .3s ease; se establece una transición suave de 0.3 segundos en los botones. */
+}
+.btn:hover{ /* con .btn:hover se establecen los estilos de los botones cuando se pasa el cursor sobre ellos. */
+    background: rgba(255, 255, 255, 0.3); /* con background: rgba(255, 255, 255, 0.3); se establece el color de fondo de los botones cuando se pasa el cursor sobre ellos. */
+}
+#registerBtn{ /* con #registerBtn se establecen los estilos del botón de registro. */
+    margin-left: 15px; /* con margin-left: 15px; se establece el margen izquierdo del botón de registro en 15px. */
+}
+.btn.white-btn{     /* con .btn.white-btn se establecen los estilos del botón de color blanco. */
+    background: rgba(255, 255, 255, 0.9); /* con background: rgba(255, 255, 255, 0.9); se establece el color de fondo del botón en blanco. */   
+}
+.btn.btn.white-btn:hover{ /* con .btn.white-btn:hover se establecen los estilos del botón de color blanco cuando se pasa el cursor sobre él. */
+    background: rgba(255, 255, 225, 0.7); /* con background: rgba(255, 255, 225, 0.7); se establece el color de fondo del botón en blanco cuando se pasa el cursor sobre él. */
+}
+.nav-menu-btn{ /* con .nav-menu-btn se establecen los estilos del botón del menú de navegación. */
+    display: none; /* con display: none; se oculta el botón del menú de navegación. */
+}
+
+@media only screen and (max-width: 786px){ /* con @media only screen and (max-width: 786px) se establecen los estilos para pantallas de hasta 786px de ancho. */
+    .nav-button{ /* con .nav-button se establecen los estilos de los botones de la barra de navegación. */
+        display: none;  /* con display: none; se ocultan los botones de la barra de navegación. */
+    }
+    .nav-menu.responsive{ /* con .nav-menu.responsive se establecen los estilos del menú de navegación en modo responsivo. */
+        top: 100px; /* con top: 100px; se establece la posición del menú de navegación a 100px de la parte superior de la ventana gráfica. */
+    }
+    .nav-menu{ /* con .nav-menu se establecen los estilos del menú de navegación. */
+        position: absolute; /* con position: absolute; se estable la posición del menú de navegación. */
+        top: -800px; /* con top: -800px; se establece la posición del menú de navegación a -800px de la parte superior de la ventana gráfica. */
+        display: flex;  /* con display: flex; se convierte el menú de navegación en un contenedor flexible. */
+        justify-content: center; /* con justify-content: center; se centra el contenido horizontalmente. */
+        background: rgba(255, 255, 255, 0.2); /* con background: rgba(255, 255, 255, 0.2); se establece el color de fondo del menú de navegación. */
+        width: 100%; /* con width: 100%; se establece el ancho del menú de navegación al 100% de la ventana gráfica. */
+        height: 90vh; /* con height: 90vh; se establece la altura del menú de navegación al 90% de la altura de la ventana gráfica. */
+        -webkit-backdrop-filter: blur(20px); /* con -webkit-backdrop-filter: blur(20px); se aplica un filtro de desenfoque al menú de navegación. */
+        backdrop-filter: blur(20px); /* con backdrop-filter: blur(20px); se aplica un filtro de desenfoque al menú de navegación. */
+        transition: .3s; /* con transition: .3s; se establece una transición suave de 0.3 segundos en el menú de navegación. */
+    }
+    .nav-menu ul{ /* con .nav-menu ul se establecen los estilos de la lista de elementos del menú de navegación. */
+        flex-direction: column; /* con flex-direction: column; se establece la dirección de los elementos de la lista en columna. */
+        text-align: center; /* con text-align: center; se centra el texto de los elementos de la lista. */
+    }
+    .nav-menu-btn{  /* con .nav-menu-btn se establecen los estilos del botón del menú de navegación. */
+        display: block;     /* con display: block; se muestra el botón del menú de navegación. */
+    }
+    .nav-menu-btn i{ /* con .nav-menu-btn i se establecen los estilos del icono del botón del menú de navegación. */
+        font-size: 25px; /* con font-size: 25px; se establece el tamaño del icono del botón del menú de navegación en 25px. */
+        color: #fff; /* con color: #fff; se establece el color del icono del botón del menú de navegación en blanco. */
+        padding: 10px; /* con padding: 10px; se establece el relleno del icono del botón del menú de navegación en 10px. */
+        background: rgba(255, 255, 255, 0.2); /* con background: rgba(255, 255, 255, 0.2); se establece el color de fondo del icono del botón del menú de navegación. */
+        border-radius: 50%; /* con border-radius: 50%; se establece el radio de las esquinas del icono del botón del menú de navegación. */
+        cursor: pointer; /* con cursor: pointer; se cambia el cursor al pasar sobre el icono del botón del menú de navegación. */
+        transition: .3s; /* con transition: .3s; se establece una transición suave de 0.3 segundos en el icono del botón del menú de navegación. */
+    }
+    .nav-menu-btn i:hover{ /* con .nav-menu-btn i:hover se establecen los estilos del icono del botón del menú de navegación cuando se pasa el cursor sobre él. */
+        background: rgba(255, 255, 255, 0.2); /* con background: rgba(255, 255, 255, 0.2); se establece el color de fondo del icono del botón del menú de navegación cuando se pasa el cursor sobre él. */
+    }
+
+}
+main { /* con main se establecen los estilos del contenido principal. */
+    max-width: 1200px; /* con max-width: 1200px; se establece el ancho máximo del contenido principal en 1200px. */
+    margin: 20px auto; /* con margin: 20px auto; se establece el margen del contenido principal en 20px arriba y abajo y automático a los lados. */
+    padding: 10px; /* con padding: 10px; se establece el relleno del contenido principal en 10px. */
+}
+
+iframe { /* con iframe se establecen los estilos de los iframes. */
+    width: 100%; /* con width: 100%; se establece el ancho de los iframes al 100% del contenedor. */
+    height: 500px; /* con height: 500px; se establece la altura de los iframes en 500px. */
+    border: none; /* con border: none; se elimina el borde de los iframes. */
+    background: #ffffff; /* con background: #ffffff; se establece el color de fondo de los iframes en blanco. */
+}
+
+h1 { /* con h1 se establecen los estilos de los títulos de nivel 1. */
+    text-align: center; /* con text-align: center; se centra el texto de los títulos de nivel 1. */
+    margin-top: 180px; /* Ajusta el valor para que se separe del borde superior */
+    margin-bottom: 20px; /* con margin-bottom: 20px; se establece el margen inferior de los títulos de nivel 1 en 20px. */
+    color: #00ffff; /* con color: #00ffff; se establece el color del texto de los títulos de nivel 1. */
+    font-size: 2rem; /* con font-size: 2rem; se establece el tamaño del texto de los títulos de nivel 1 en 2rem. */
+    text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff; /* con text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff; se establece una sombra en el texto de los títulos de nivel 1. */
+}
+/* Galería */
+.gallery { /* con .gallery se establecen los estilos de la galería. */
+    display: grid; /* con display: grid; se convierte la galería en un contenedor de cuadrícula. */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* con grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); se establece el tamaño de las columnas de la galería. */
+    gap: 20px; /* con gap: 20px; se establece el espacio entre las imágenes de la galería en 20px. */
+    margin-top: 30px; /* con margin-top: 30px; se establece el margen superior de la galería en 30px. */
+}
+
+.gallery-item { /* con .gallery-item se establecen los estilos de los elementos de la galería. */
+    border: none; /* con border: none; se elimina el borde de los elementos de la galería. */
+    border-radius: 8px; /* con border-radius: 8px; se establece el radio de las esquinas de los elementos de la galería. */
+    overflow: hidden; /* con overflow: hidden; se oculta el contenido que se desborda de los elementos de la galería. */
+    box-shadow: 0 0 5px rgba(0, 255, 255, 0.2),   /* con box-shadow: 0 0 25px rgba(0, 255, 255, 0.2), se establece una sombra en el contenedor. */
+                0 0 20px rgba(0, 255, 255, 0.2), 
+                0 0 10px rgba(0, 255, 255, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    background: black; /* con background: black; se establece el color de fondo de los elementos de la galería en negro. */
+    
+}
+
+.gallery-item img { 
+    width: 100%;
+    height: auto;
+    
+}
+
+.gallery-item p {
+    padding: 15px;
+    font-size: 16px;
+    color: #00ffff;
+    text-align: center;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos del modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: -30px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.modal-content { 
+    background: rgb(109, 109, 109);
+    padding: 25px;
+    border-radius: 8px;
+    max-width: 800px;
+    max-height: 90%;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content iframe {
+    width: 100%;
+    height: 600px;
+    border: none;
+    border-radius: 8px;
+    overflow: hidden; 
+}
+
+.close-button { 
+    position: absolute; /* con position: absolute; se establece la posición del botón de cierre. */
+    top: 10px; /* con top: 10px; se coloca el botón de cierre a 10px del borde superior del contenedor. */
+    right: 10px; /* con right: 10px; se coloca el botón de cierre a 10px del borde derecho del contenedor. */
+    cursor: pointer; /* con cursor: pointer; se cambia el cursor al pasar sobre el botón de cierre. */
+    font-size: 24px; /* con font-size: 24px; se establece el tamaño del botón de cierre en 24px. */
+    color: #333; /* con color: #333; se establece el color del botón de cierre. */
+}
+
+.close-button:hover { /* con .close-button:hover se establecen los estilos del botón de cierre cuando se pasa el cursor sobre él. */
+    color: #007bff; /* con color: #007bff; se establece el color del botón de cierre cuando se pasa el cursor sobre él. */
+}
+
+@keyframes fadeIn { /* con @keyframes fadeIn se establece una animación de entrada. */
+    from { opacity: 0; transform: scale(0.9); } /* con from { opacity: 0; transform: scale(0.9); se establece la opacidad y la escala de la animación. */
+    to { opacity: 1; transform: scale(1); } /* con to { opacity: 1; transform: scale(1); se establece la opacidad y la escala de la animación. */
+}
